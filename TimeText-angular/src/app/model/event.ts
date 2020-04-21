@@ -3,4 +3,5 @@ export class Event {
     eventName: String;
     eventLocation: String;
     eventDate: String;
+    timeResult: String;
 }
