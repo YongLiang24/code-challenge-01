@@ -1,0 +1,30 @@
+<div class="text-center" style="text-align: center">
+    <p>display-time works!</p>
+<form (submit)="onSubmit($event)">
+    Hour: <input type="number" name="hour" value="hour" >
+    Minutes: <input type="number" name="minute" value="minute"><br/><br/>
+<button type="submit">Display Time</button>
+</form>
+<br/>
+<p>Time Text: <strong>{{displayTimeText}}</strong></p>
+
+<hr/>
+
+<p>Event Section</p>
+
+<form (submit)="onSubmitEvent($event)">
+    <p>Create an event:</p><br/>
+    Event Name: <input type="text" name="eventName"><br/>
+    Location: <input type="text" name="eventLocation"><br/>
+    Date: <input type="date" name="eventDate"><br/><br/>
+    <button type="submit">Create Event</button>
+    <br/>
+    <p>{{eventMessage}}</p>
+</form>
+
+<button (click)="onViewEvent()">View Events</button>
+    <p *ngFor="let eventObj of allEventObj">
+     {{eventObj.id}}. Name: {{eventObj.eventName}} - Location: {{eventObj.eventLocation}} - Date: {{eventObj.eventDate}}
+     <br/><br/>
+    </p>
+</div>
