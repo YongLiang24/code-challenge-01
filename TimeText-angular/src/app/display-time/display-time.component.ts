@@ -20,23 +20,8 @@ export class DisplayTimeComponent implements OnInit {
 
   ngOnInit(): void {
     
+    
   }
-
-  // onSubmit(ev){
-  //   ev.preventDefault();
-  //   //console.log("hour value: "+ev.target.hour.value + " minute value: "+ ev.target.minute.value)
-  //   this.timeText.hour =ev.target.hour.value;
-  //   this.timeText.minute=ev.target.minute.value;
-
-  //   this.timeService.addTime1(this.timeText).subscribe(res=>{    
-  //     console.log("hitting this call?")
-  //   }, error=>{
-  //     this.timeService.getTime().subscribe(res=>{
-  //       //console.log(res[0].result);
-  //       this.displayTimeText = res[0].result;
-  //     })
-  //   })
-  // }
 
   onSubmitEvent(ev){
     ev.preventDefault();
@@ -81,5 +66,23 @@ export class DisplayTimeComponent implements OnInit {
       this.allEventObj = res;
     })
   }
+
+
+  
+    // onSubmit(ev){
+  //   ev.preventDefault();
+  //   //console.log("hour value: "+ev.target.hour.value + " minute value: "+ ev.target.minute.value)
+  //   this.timeText.hour =ev.target.hour.value;
+  //   this.timeText.minute=ev.target.minute.value;
+
+  //   this.timeService.addTime1(this.timeText).subscribe(res=>{    
+  //     console.log("hitting this call?")
+  //   }, error=>{
+  //     this.timeService.getTime().subscribe(res=>{
+  //       //console.log(res[0].result);
+  //       this.displayTimeText = res[0].result;
+  //     })
+  //   })
+  // }
 
 }

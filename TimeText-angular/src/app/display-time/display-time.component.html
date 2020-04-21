@@ -1,4 +1,4 @@
-<div class="card" style="text-align: center">
+<div class="card container text-center">
     <!-- <p>display-time works!</p>
 <form (submit)="onSubmit($event)">
     Hour: <input type="number" name="hour" value="hour" >
@@ -11,21 +11,47 @@
 <br/>
 
 <form (submit)="onSubmitEvent($event)">
-    <p>Create an event:</p><br/>
-    Event Name: <input type="text" name="eventName"><br/>
-    Location: <input type="text" name="eventLocation"><br/>
-    Date: <input type="date" name="eventDate"><br/><br/>
-    Time for the Event:<br/><br/>
+    
+    <p class="eventText"><strong>Create an event:</strong></p><br/>
+
+    <p>{{displayTimeText}}</p>
+    <div class="form-group">
+    Event Name:<input type="text" name="eventName"><br/>
+    </div>
+    <div class="form-group">
+    Location:  <input type="text" name="eventLocation"><br/></div>
+    Date: <input type="date" name="eventDate"><br/>
+    Time:<br/>
     Hour: <input type="number" name="hour" value="hour" >
     Minutes: <input type="number" name="minute" value="minute"><br/><br/>
     <button type="submit">Create Event</button>
     <br/>
     <p>{{eventMessage}}</p>
-</form>
+</form><hr/>
 
-<button (click)="onViewEvent()">View Events</button>
-    <p *ngFor="let eventObj of allEventObj">
-     {{eventObj.id}}. Name: {{eventObj.eventName}} - Location: {{eventObj.eventLocation}} - Date: {{eventObj.eventDate}} - Time: {{eventObj.timeResult}}
-     <br/><br/>
-    </p>
+<button id="viewEventBtn" type="button" class="btn btn-primary" (click)="onViewEvent()">View Events</button>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+                
+              <tr *ngFor="let eventObj of allEventObj">              
+                <th scope="row">{{eventObj.id}}</th>
+                <td>{{eventObj.eventName}}</td>
+                <td>{{eventObj.eventLocation}}</td>
+                <td>{{eventObj.eventDate}}</td>
+                <td>{{eventObj.timeResult}}</td>
+              </tr>          
+            </tbody>
+          </table>
+
+
+    
 </div>
